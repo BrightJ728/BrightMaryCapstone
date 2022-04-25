@@ -6,7 +6,7 @@ import adafruit_ads1x15.ads1015 as ADS
 from adafruit_ads1x15.analog_in import AnalogIn
 
 i2c = busio.I2C(board.SCL, board.SDA)
-def FlameSensor():
+def GasSensor():
         # Create the I2C bus
  #   i2c = busio.I2C(board.SCL, board.SDA)
 
@@ -15,10 +15,9 @@ def FlameSensor():
     ads.gain = 1
     
     # Create single-ended input on channel 0
-    chan = AnalogIn(ads, ADS.P0)
-    print('---flame here---')
+    chan = AnalogIn(ads, ADS.P1)
+    print('---Gas here---')
     return chan.value 
     
 if __name__=="__main__":
-    FlameSensor()
     GasSensor()
