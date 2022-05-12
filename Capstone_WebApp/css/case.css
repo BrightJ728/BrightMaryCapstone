@@ -1,0 +1,72 @@
+a{
+  text-decoration: none;
+  color: black;
+  
+}
+a,div{
+  color: black;
+
+}
+
+body {
+font-family: "Lato", sans-serif;
+}
+
+
+.main {
+margin-left: 160px; /* Same as the width of the sidenav */
+}
+
+.form{
+	display:inline;
+	width:100%;
+	//margin-left:18%;
+}
+input{
+	color:red;
+	height:40px;
+}
+title{
+color:red;
+font-weight:bold;
+		font-size:x-large;
+}
+tr{
+	//padding:10%;
+	font-weight:bold;
+color: rgb(124, 62, 62);
+}
+body{
+	width:100%;
+}
+a{
+  text-decoration: none;
+  color: black;
+  
+}
+a,div{
+  color: black;
+
+}
+.inner-cont{
+	padding-top:1%;
+	padding-bottom:4%;
+	margin-bottom:0.2%;
+	height:60px;
+		background-image: url("../image/fire.jfif");
+
+}
+.custom{
+width: 80%;
+color: white;
+margin-left: 0%;
+}
+body {
+font-family: "Lato", sans-serif;
+}
+
+
+.main {
+margin-top: 1%;
+//margin-left: 200px; /* Same as the width of the sidenav */
+}

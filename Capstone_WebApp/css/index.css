@@ -1,0 +1,38 @@
+a{
+  text-decoration: none;
+  color: black;
+  
+}
+a,div{
+  color: black;
+
+}
+.navcon{
+	font-size: larger;
+	color: red;
+}
+.inner-cont{
+	padding-top:1%;
+	padding-bottom:4%;
+	background-color:red;
+	height:70px;
+		background-image: url("../image/fire.jfif");
+position:relative;
+}
+.custom{
+width: cover;
+background-color: black;
+color: white;
+position:relative;
+margin-left: 0%;
+}
+
+
+
+.main {
+margin-top: 1%;
+position:relative;
+margin-left: 10px; /* Same as the width of the sidenav */
+}
+
+

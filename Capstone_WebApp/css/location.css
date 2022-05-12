@@ -1,0 +1,41 @@
+.inner-cont{
+	padding-top:1%;
+	padding-bottom:4%;
+	margin-bottom:0.2%;
+	background-color:red;
+	height:60px;
+		background-image: url("../image/fire.jfif");
+
+}
+.navcon{
+	font-size: large;
+	color: red;
+	width: 100%;
+}
+.form{
+	display:inline;
+	width:100%;
+	margin-left:18%;
+	padding: 3%;
+}
+input{
+	color:red;
+	height:40px;
+}
+.title{
+color:red;
+	padding:10%;
+	font-weight:bold;
+		font-size:large;
+/* background-color: black; */
+}
+tr{
+color:rgb(75, 51, 51);
+font-size:small;
+	padding:10%;
+	font-weight:bold;
+}
+body{
+	width:100%;
+}
+
