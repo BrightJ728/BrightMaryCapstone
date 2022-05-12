@@ -5,7 +5,6 @@ import urllib.parse
 import urllib.request
 import time
 import cv2
-import RealSM
 
 # initialize the camera and grab a reference to the raw camera capture
 start_time = time.time()
