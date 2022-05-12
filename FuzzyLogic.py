@@ -15,6 +15,7 @@ import FlameSensorReading
 import  GasSensorReading
 import EmailFireService
 import Sim800LGSM
+import SMSTwilio
 
 #fuzzy Domian
 
@@ -213,16 +214,12 @@ while True:
             status= 'fire'
             print(status)
             import Rbuzzer
-           
-            import SMScaps
-          
+            SMSTwilio.Twiliosms()
             EmailFireService.sendEmail()
             Sim800LGSM.sendSms()
             import urllib.parse
             import urllib.request
             url = 'http://20.90.108.172/Capstone_WebApp/addsensor.php'
-
-
             values = { 'status':status}
 
             data = urllib.parse.urlencode(values)
@@ -232,8 +229,8 @@ while True:
             print("--- %s seconds ---" % (time.time() - start_time))
             with urllib.request.urlopen(req) as response:
                 the_page = response.read()
-
-            time.sleep(2.0)
+                #sleep for 30 seconds when fire is detected
+            time.sleep(30.0)
 
     except RuntimeError as error:
         # Errors happen fairly often, DHT's are hard to read, just >
