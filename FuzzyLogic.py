@@ -13,6 +13,8 @@ GPIO.setmode(GPIO.BCM)
 import TemperatureSensorReading
 import FlameSensorReading
 import  GasSensorReading
+import EmailFireService
+import Sim800LGSM
 
 #fuzzy Domian
 
@@ -213,9 +215,9 @@ while True:
             import Rbuzzer
            
             import SMScaps
-            import RealSM
-            import REmail
-            RealSM.sendSms()
+          
+            EmailFireService.sendEmail()
+            Sim800LGSM.sendSms()
             import urllib.parse
             import urllib.request
             url = 'http://20.90.108.172/Capstone_WebApp/addsensor.php'
