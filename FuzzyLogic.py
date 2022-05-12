@@ -178,8 +178,8 @@ def fire_detection_Rules():
 
 #def deffuzzification():
 ## using the centroid defuzzication method
-buzze = ctrl.ControlSystem( fire_detection_Rules())
-buz_zer=ctrl.ControlSystemSimulation(buzze)
+defuzzify= ctrl.ControlSystem( fire_detection_Rules())
+defuzzify_output=ctrl.ControlSystemSimulation(defuzzify)
 status=""
 temp =""
 gas=""
@@ -192,28 +192,29 @@ while True:
         temp=TemperatureSensorReading.temperature()
         gas=GasSensorReading.GasSensor()
         flame=flameSensorGas.FlameSensor()
-        buz_zer.input['temp'] = temp
-        buz_zer.input['flame'] =flame
-        buz_zer.input['gas'] =gas
+        defuzzify_output.input['temp'] = temp
+        defuzzify_output.input['flame'] =flame
+        defuzzify_output.input['gas'] =gas
         print('temperature value is: '+ " ", temp)
         print('gas value is: '+ " ", gas)
         print('flame value is: '+ " ", flame)
-        buz_zer.compute()
-        print(round(buz_zer.output['output']))
-        b =round(buz_zer.output['output'])
-        if b <=40:
+        defuzzify_output.compute()
+        rounded_output =round(defuzzify_output.output['output'])
+        print(round_output)
+
+        if rounded_output <=40:
  #           GPIO.output(5,GPIO.HIGH)
             status='no fire'
             print(status)
             time.sleep(2.0)
-        elif (b >=41) & (b<=50):
+        elif (rounded_output >=41) & (rounded_output<=50):
             status='potential fire'
             print(status)
             time.sleep(2.0)
         else:
             status= 'fire'
             print(status)
-            import Rbuzzer
+            import Buzzer
             SMSTwilio.Twiliosms()
             EmailFireService.sendEmail()
             Sim800LGSM.sendSms()
