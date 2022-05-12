@@ -9,9 +9,9 @@ GPIO.setmode(GPIO.BCM)
 #GPIO.setup(23, GPIO.OUT,initial =GPIO.LOW)
 #GPIO.setup(5,GPIO.OUT,initial =GPIO.LOW)
 
-#import RealSM
-import Rtemp
-import flameGas
+#importing temperature and flame sensor python code
+import TemperatureSensorReading
+import FlameSensorReading
 #fuzzy Domian
 
 temp = ctrl.Antecedent(np.arange(-40,80, 1), 'temp')
@@ -42,13 +42,7 @@ output['no fire'] = fuzz.trimf(output.universe, [0, 10, 25])
 output['potential fire'] = fuzz.trimf(output.universe, [25, 40, 55])
 output['fire'] = fuzz.trimf(output.universe, [55, 75, 100])
 
-# def membershipFnx():
-#     return [temp,flame,gas]
-# Fuzzy Rules
-#temp.view()
 
-#flame.view()
-#gas.view()
 
 def fire_detection_Rules():
     Rule1a = ctrl.Rule(
@@ -181,14 +175,12 @@ def fire_detection_Rules():
 ## using the centroid defuzzication method
 buzze = ctrl.ControlSystem( fire_detection_Rules())
 buz_zer=ctrl.ControlSystemSimulation(buzze)
-#import Rtemp
 status=""
 temp =""
 gas=""
 flame=""
 
 
-import time
 while True:
     try:
         start_time = time.time()
@@ -210,7 +202,6 @@ while True:
             print(status)
             time.sleep(2.0)
         elif (b >=41) & (b<=50):
-            #GPIO.output(5,GPIO.HIGH)
             status='potential fire'
             print(status)
             time.sleep(2.0)
@@ -218,8 +209,7 @@ while True:
             status= 'fire'
             print(status)
             import Rbuzzer
-            # GPIO.output(23,GPIO.HIGH)
-            #GPIO.output(6,GPIO.HIGH
+           
             import SMScaps
             import RealSM
             import REmail
