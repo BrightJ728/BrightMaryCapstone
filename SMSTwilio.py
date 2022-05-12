@@ -1,6 +1,6 @@
 from twilio.rest import Client
 
-def Twilosms():
+def Twiliosms():
     # Your Account SID from twilio.com/console
     account_sid = "AC90951957f5eb34584c634ada2bce6ebc"
     # Your Auth Token from twilio.com/console
@@ -15,4 +15,4 @@ def Twilosms():
 
     print(message.sid)
 if __name__=="__main__":
-    Twilosms()
+    Twiliosms()
