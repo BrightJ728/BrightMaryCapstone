@@ -192,7 +192,7 @@ import time
 while True:
     try:
         start_time = time.time()
-        temp=Rtemp.temperature()
+        temp=temperatureReading.temperature()
         gas=flameGas.GasSensor()
         flame=flameGas.FlameSensor()
         buz_zer.input['temp'] = temp
@@ -213,11 +213,6 @@ while True:
             #GPIO.output(5,GPIO.HIGH)
             status='potential fire'
             print(status)
-            #import Rbuzzer
-            #import RealSM
-            #import REmail
-            # RealSM.sendSms()
-            #import Rbuzzer
             time.sleep(2.0)
         else:
             status= 'fire'
