@@ -12,6 +12,8 @@ GPIO.setmode(GPIO.BCM)
 #importing temperature and flame sensor python code
 import TemperatureSensorReading
 import FlameSensorReading
+import  GasSensorReading
+
 #fuzzy Domian
 
 temp = ctrl.Antecedent(np.arange(-40,80, 1), 'temp')
@@ -184,9 +186,9 @@ flame=""
 while True:
     try:
         start_time = time.time()
-        temp=temperatureReading.temperature()
-        gas=flameGas.GasSensor()
-        flame=flameGas.FlameSensor()
+        temp=TemperatureSensorReading.temperature()
+        gas=GasSensorReading.GasSensor()
+        flame=flameSensorGas.FlameSensor()
         buz_zer.input['temp'] = temp
         buz_zer.input['flame'] =flame
         buz_zer.input['gas'] =gas
